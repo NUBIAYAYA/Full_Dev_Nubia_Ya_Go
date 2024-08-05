@@ -13,4 +13,23 @@ let  usuarios = [
     { id: 5, usuario: 'usuario5', clave: '3141' }
 ];
 
-let intentosFallidos = {};
+function pruebaBoton(){
+    let user = document.getElementById('user').value
+    let buscarUsuario= usuarios.find(usuario=> usuario.usuario===user)
+
+}
+function pruebaBoton(){
+    let user = document.getElementById('user').value.toLocaleUpperCase()
+    let pw = document.getElementById('pw').value
+
+    let usuarioLogueado= usuarios.some(usuario=> usuario.usuario.toLocaleUpperCase()==user && usuario.clave==pw)
+
+    if(usuarioLogueado){
+        setUser()
+        window.open('Index.html')  
+    }else{
+        bloquearCuenta()
+        console.log('error de credenciales'); 
+    }
+
+}
