@@ -4,6 +4,7 @@ console.log('Logica inicio sesion');
 const usuario = 'admin'
 const clave = '1234'
 let contador =0
+let intentosFallidos = {};
 
 let  usuarios = [
     { id: 1, usuario: 'usuario1', clave: '1234' },
@@ -33,3 +34,17 @@ function pruebaBoton(){
     }
 
 }
+
+function incrementarIntentos(usuario) {
+    if (!intentosFallidos[usuario]) {
+        intentosFallidos[usuario] = 1;
+    } else {
+        intentosFallidos[usuario]++;
+    }
+
+    if (intentosFallidos[usuario] >= 3) {
+        alert('Usuario bloqueado. Demasiados intentos fallidos.');
+        bloquearUsuario(usuario);
+    }
+}
+
