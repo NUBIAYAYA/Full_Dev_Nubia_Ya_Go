@@ -18,8 +18,14 @@ function pruebaBoton(){
     let pw = document.getElementById('pw').value
 
     let usuarioLogueado=usuarios.some(usuario =>usuario.usuario.toLocaleUpperCase()==user&&usuario.clave==pw)
-    console.log (usuarioLogueado);
-
+    
+  if(usuarioLogueado){
+    setUser()
+    window.open('index.html')  
+    }else{
+        bloquearCuenta()
+        console.log('error de credenciales')
+    }
 }
 
 
