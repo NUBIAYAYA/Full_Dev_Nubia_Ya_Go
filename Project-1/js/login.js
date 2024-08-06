@@ -18,3 +18,6 @@ function pruebaBoton(){
     let buscarUsuario= usuarios.find(usuario=> usuario.usuario===user)
 
 }
+let usuarioLogueado=usuarios.some(usuario=>usuario.usuario.toLocaleUpperCase()==user && usuario.clave==pw)
+
+console.log (usuarioLogueado);
