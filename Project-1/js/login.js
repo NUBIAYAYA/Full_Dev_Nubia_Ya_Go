@@ -18,8 +18,8 @@ function pruebaBoton(){
     let pw = document.getElementById('pw').value
 
     let usuarioLogueado=usuarios.some(usuario =>usuario.usuario.toLocaleUpperCase()==user&&usuario.clave==pw)
+    console.log (usuarioLogueado);
 
 }
 
 
-console.log (usuarioLogueado);
